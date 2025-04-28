@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerar Catálogo - Vanessa Pessanha Acessórios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- CDN do jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- CDN do Sortable.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h1>Gerar Catálogo de Acessórios</h1>
+
+  <form id="catalogForm">
+    <div class="input-group">
+      <label for="colecao">Nome da Coleção:</label>
+      <input type="text" id="colecao" name="colecao" required>
+    </div>
+
+    <div class="input-group">
+      <label for="capa">Imagem da Capa (A4 Vertical):</label>
+      <input type="file" id="capa" name="capa" accept="image/*" required>
+    </div>
+
+    <div class="input-group">
+      <label for="photos">Fotos das Peças (Selecione várias):</label>
+      <input type="file" id="photos" name="photos[]" accept="image/*" multiple required>
+    </div>
+
+    <div id="itemsContainer"></div>
+
+    <div id="photoCount"></div>
+
+    <button type="submit" class="btn">Gerar PDF</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

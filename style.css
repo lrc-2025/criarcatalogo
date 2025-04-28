@@ -1,0 +1,140 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #D9D0CD;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #9c7a6a;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  color: #6b4c3b;
+  margin-bottom: 5px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#itemsContainer {
+  margin-top: 20px;
+}
+
+.item-form {
+  background: #f8f4f2;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  cursor: grab;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.item-form:hover {
+  transform: scale(1.02);
+  background: #f2e9e7;
+}
+
+.item-form img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #D9D0CD; /* Borda pastel */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Sombra para "flutuar" */
+}
+
+.item-form input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.photo-index {
+  font-weight: bold;
+  color: #6b4c3b;
+  font-size: 14px;
+  width: 30px;
+  text-align: center;
+}
+
+/* Botão Remover */
+.remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #e74c3c;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 4px 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+}
+
+.sortable-ghost {
+  opacity: 0.5;
+}
+
+#photoCount {
+  text-align: center;
+  margin: 10px 0;
+  color: #6b4c3b;
+  font-weight: bold;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #9c7a6a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #856652;
+}
+
+.btn:disabled {
+  background: #b59c8e;
+  cursor: not-allowed;
+}
