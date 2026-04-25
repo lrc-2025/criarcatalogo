@@ -2,45 +2,90 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Gerar Catálogo - Vanessa Pessanha Acessórios</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerar Catálogo – Vanessa Pessanha Acessórios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="style.css">
-
-  <!-- CDN do jsPDF -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <!-- jsPDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <!-- CDN do Sortable.js -->
+  <!-- Sortable.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 </head>
 <body>
 
-<div class="container">
-  <h1>Gerar Catálogo de Acessórios</h1>
+  <header class="header">
+    <img src="logo.png" alt="Logo" class="header-logo" onerror="this.style.display='none'">
+    <div class="header-text">
+      <h1>Criar Catálogo</h1>
+      <p>Vanessa Pessanha Acessórios</p>
+    </div>
+  </header>
 
-  <form id="catalogForm">
-    <div class="input-group">
-      <label for="colecao">Nome da Coleção:</label>
-      <input type="text" id="colecao" name="colecao" required>
+  <main class="container">
+
+    <div class="card-form">
+      <section class="form-section">
+        <h2 class="section-title">📋 Informações</h2>
+
+        <div class="input-group">
+          <label for="colecao">Nome da Coleção</label>
+          <input type="text" id="colecao" placeholder="Ex: Coleção Verão 2025" required>
+        </div>
+
+        <div class="input-group">
+          <label for="capa">Imagem da Capa <span class="hint">(A4 vertical)</span></label>
+          <div class="file-drop-zone" id="capaZone">
+            <div class="file-drop-inner" id="capaInner">
+              <span class="file-icon">🖼️</span>
+              <span class="file-label">Toque para escolher a capa</span>
+              <span class="file-hint">ou arraste uma imagem aqui</span>
+            </div>
+            <input type="file" id="capa" accept="image/*" class="file-hidden">
+          </div>
+          <div id="capaPreview" class="single-preview"></div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2 class="section-title">📸 Fotos das Peças</h2>
+        <div class="file-drop-zone" id="photosZone">
+          <div class="file-drop-inner">
+            <span class="file-icon">📷</span>
+            <span class="file-label">Toque para adicionar fotos</span>
+            <span class="file-hint">Selecione várias de uma vez</span>
+          </div>
+          <input type="file" id="photos" accept="image/*" multiple class="file-hidden">
+        </div>
+
+        <div id="photoCount" class="photo-count"></div>
+
+        <div id="itemsContainer" class="items-grid">
+          <!-- cards gerados pelo script.js -->
+        </div>
+
+        <div id="sortHint" class="sort-hint" style="display:none">
+          ☝️ Segure e arraste os cards para reordenar
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="btnGerar" class="btn-primary" onclick="gerarPDF()">
+          <span class="btn-icon">📄</span>
+          Gerar PDF
+        </button>
+      </div>
     </div>
 
-    <div class="input-group">
-      <label for="capa">Imagem da Capa (A4 Vertical):</label>
-      <input type="file" id="capa" name="capa" accept="image/*" required>
+  </main>
+
+  <!-- Loading overlay -->
+  <div id="loadingOverlay" class="loading-overlay" style="display:none">
+    <div class="loading-box">
+      <div class="spinner"></div>
+      <p id="loadingMsg">Gerando PDF…</p>
     </div>
+  </div>
 
-    <div class="input-group">
-      <label for="photos">Fotos das Peças (Selecione várias):</label>
-      <input type="file" id="photos" name="photos[]" accept="image/*" multiple required>
-    </div>
-
-    <div id="itemsContainer"></div>
-
-    <div id="photoCount"></div>
-
-    <button type="submit" class="btn">Gerar PDF</button>
-  </form>
-</div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
