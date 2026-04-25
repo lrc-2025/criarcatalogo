@@ -137,19 +137,12 @@ function destroySortable() {
 }
 
 function updateNumbers() {
-  document.querySelectorAll('.card-num').forEach((el, i) => {
-    el.textContent = `Peça #${i + 1}`;
-  });
-  document.querySelectorAll('.card-input[data-field]').forEach(inp => {
-    const newIdx = parseInt(inp.closest('.item-card').dataset.idx);
-    inp.dataset.idx = newIdx;
-  });
-  document.querySelectorAll('.card-remove').forEach((btn, i) => {
-    btn.dataset.idx = i;
-  });
-  // re-indexar dataset.idx nos cards
   document.querySelectorAll('.item-card').forEach((card, i) => {
     card.dataset.idx = i;
+    card.querySelector('.card-num').textContent = `Peça #${i + 1}`;
+    card.querySelectorAll('.card-input[data-field]').forEach(inp => { inp.dataset.idx = i; });
+    const removeBtn = card.querySelector('.card-remove');
+    if (removeBtn) removeBtn.dataset.idx = i;
   });
 }
 
