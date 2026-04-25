@@ -68,10 +68,37 @@
         </div>
       </section>
 
+      <!-- Seção de publicação -->
+      <section class="form-section" id="pubSection">
+        <h2 class="section-title">🌐 Publicar no site</h2>
+        <div id="tokenBadge" class="token-badge token-off">
+          <span id="tokenBadgeIcon">🔴</span>
+          <span id="tokenBadgeText">Token não configurado</span>
+          <button id="btnConfigToken" class="token-config-btn">Configurar</button>
+        </div>
+        <div id="tokenForm" class="token-form" style="display:none">
+          <div class="input-group">
+            <label for="tokenInput">GitHub Personal Access Token <span class="hint">(salvo neste navegador)</span></label>
+            <input type="password" id="tokenInput" placeholder="ghp_xxxxxxxxxxxxxxxx"
+                   autocomplete="off" spellcheck="false">
+          </div>
+          <div class="token-form-btns">
+            <button id="btnSaveToken" class="btn-save-token">Salvar</button>
+            <a href="https://github.com/settings/tokens/new?scopes=public_repo&description=VanessaCatalogosAdmin"
+               target="_blank" rel="noopener noreferrer" class="token-help-link">Como criar um token?</a>
+          </div>
+          <p id="tokenFormMsg" class="token-form-msg" style="display:none"></p>
+        </div>
+      </section>
+
       <div class="actions">
-        <button id="btnGerar" class="btn-primary" onclick="gerarPDF()">
+        <button id="btnPublicar" class="btn-primary">
+          <span class="btn-icon">🚀</span>
+          Publicar no site
+        </button>
+        <button id="btnBaixar" class="btn-secondary-action">
           <span class="btn-icon">📄</span>
-          Gerar PDF
+          Só baixar PDF
         </button>
       </div>
     </div>

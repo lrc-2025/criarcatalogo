@@ -306,10 +306,102 @@ body {
 
 .card-remove:hover { background: #fff0f0; }
 
+/* ── TOKEN SECTION ─────────────────────── */
+.token-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.token-badge span:first-child { font-size: 14px; flex-shrink: 0; }
+
+.token-off {
+  background: #fff4f4;
+  border: 1px solid #f0c0b8;
+  color: #8a3030;
+}
+
+.token-on {
+  background: #edfaf3;
+  border: 1px solid #b0e8c8;
+  color: #1a5c36;
+}
+
+.token-badge span:nth-child(2) { flex: 1; }
+
+.token-config-btn {
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: .75;
+  transition: opacity .2s;
+  white-space: nowrap;
+}
+.token-config-btn:hover { opacity: 1; }
+
+.token-form {
+  background: var(--gold-pale);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 4px;
+}
+
+.token-form-btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.btn-save-token {
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn-save-token:hover     { background: #b8831f; }
+.btn-save-token:disabled  { opacity: .55; cursor: not-allowed; }
+
+.token-help-link {
+  font-size: 12px;
+  color: var(--gold);
+  text-decoration: none;
+}
+.token-help-link:hover { text-decoration: underline; }
+
+.token-form-msg {
+  font-size: 12px;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.token-form-msg.error {
+  background: #fff0ee;
+  color: #c0392b;
+  border: 1px solid #f0c0b8;
+}
+
 /* ── ACTIONS ───────────────────────────── */
 .actions {
   padding: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .btn-primary {
@@ -338,6 +430,29 @@ body {
 }
 
 .btn-primary:active { transform: scale(.97); }
+
+.btn-secondary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  color: var(--mid);
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+  width: 100%;
+  max-width: 320px;
+  justify-content: center;
+}
+
+.btn-secondary-action:hover {
+  background: var(--gold-pale);
+  border-color: var(--gold-light);
+}
 
 .btn-icon { font-size: 18px; }
 
